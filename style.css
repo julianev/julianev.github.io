@@ -131,6 +131,8 @@ h2 {
 .card.orange { background: var(--orange); }
 .card.purple { background: var(--purple); color: #fff4e6; }
 .card p { margin: 0; }
+/* space between stacked paragraphs, without padding the card's top or bottom */
+.card p + p { margin-top: .8rem; }
 .card a { color: inherit; font-weight: 700; text-decoration: underline; text-underline-offset: 2px; }
 
 .pubs { list-style: none; padding: 0; margin: 0; }
