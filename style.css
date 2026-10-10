@@ -1,18 +1,22 @@
+/* ---------------------------------------------------------------
+   Palette. Orange + purple on warm paper; inverted for dark mode.
+   The card colours stay saturated in both themes, so text on them
+   is always dark ink.
+   --------------------------------------------------------------- */
 :root {
-  --bg: #ffffff;
-  --fg: #1a1a1a;
-  --muted: #6b6b6b;
-  --accent: #15607a;
-  --rule: #e4e4e4;
+  --ink: #14121a;
+  --paper: #fff4e6;
+  --orange: #ff6a13;
+  --purple: #7b3fe4;
+  --oncolor: #14121a;
+  --edge: 3px;
+  --off: 6px;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --bg: #15171a;
-    --fg: #e8e6e3;
-    --muted: #9a9a9a;
-    --accent: #6fb3cc;
-    --rule: #2c2f33;
+    --ink: #f6eeff;
+    --paper: #17141f;
   }
 }
 
@@ -20,59 +24,130 @@
 
 body {
   margin: 0;
-  background: var(--bg);
-  color: var(--fg);
-  font: 17px/1.65 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  background: var(--paper);
+  color: var(--ink);
+  font: 17px/1.6 ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
   -webkit-font-smoothing: antialiased;
 }
 
 main {
-  max-width: 42rem;
+  max-width: 46rem;
   margin: 0 auto;
-  padding: 4rem 1rem 6rem;
+  padding: 3.5rem 1rem 6rem;
 }
+
+/* ---- header ---- */
 
 h1 {
-  font-size: 1.9rem;
-  line-height: 1.2;
-  margin: 0 0 .3rem;
-  letter-spacing: -.01em;
+  font-size: clamp(2.6rem, 10vw, 4.4rem);
+  line-height: .92;
+  margin: 0 0 1rem;
+  text-transform: uppercase;
+  font-weight: 800;
+  letter-spacing: -.03em;
 }
+
+h1 .last {
+  display: inline-block;
+  background: var(--purple);
+  color: #fff4e6;
+  padding: 0 .12em;
+  transform: rotate(-1.2deg);
+}
+
+.tagline {
+  font-size: 1.05rem;
+  font-weight: 600;
+  margin: 0 0 1.6rem;
+}
+
+.tagline a {
+  color: inherit;
+  text-decoration: underline;
+  text-decoration-thickness: 3px;
+  text-underline-offset: 3px;
+  text-decoration-color: var(--orange);
+}
+
+nav { display: flex; flex-wrap: wrap; gap: .7rem; }
+
+nav a {
+  display: inline-flex;
+  align-items: center;
+  gap: .45rem;
+  background: var(--paper);
+  color: var(--ink);
+  text-decoration: none;
+  border: var(--edge) solid var(--ink);
+  box-shadow: 4px 4px 0 var(--ink);
+  padding: .45rem .8rem;
+  font-weight: 700;
+  font-size: .9rem;
+  text-transform: uppercase;
+  letter-spacing: .04em;
+  transition: transform .12s ease, box-shadow .12s ease, background .12s ease;
+}
+
+/* press the button into its own shadow */
+nav a:hover {
+  transform: translate(4px, 4px);
+  box-shadow: 0 0 0 var(--ink);
+  background: var(--orange);
+  color: var(--oncolor);
+}
+
+nav svg { width: 16px; height: 16px; flex: none; }
+
+/* ---- sections ---- */
+
+section { margin-top: 3rem; }
 
 h2 {
-  font-size: 1.05rem;
+  display: inline-block;
+  margin: 0 0 1rem;
+  font-size: .85rem;
+  font-weight: 800;
   text-transform: uppercase;
-  letter-spacing: .07em;
-  color: var(--muted);
-  font-weight: 600;
-  margin: 0 0 .6rem;
+  letter-spacing: .12em;
+  background: var(--ink);
+  color: var(--paper);
+  padding: .3rem .7rem;
+  transform: rotate(-1deg);
 }
 
-.tagline { margin: 0 0 1.1rem; color: var(--muted); }
-
-nav { display: flex; flex-wrap: wrap; gap: 1rem; }
-
-header {
-  padding-bottom: 2rem;
-  border-bottom: 1px solid var(--rule);
-  margin-bottom: 2.5rem;
+.card {
+  border: var(--edge) solid var(--ink);
+  box-shadow: var(--off) var(--off) 0 var(--ink);
+  padding: 1.3rem 1.4rem;
+  color: var(--oncolor);
+  transition: transform .14s ease, box-shadow .14s ease;
 }
 
-section { margin-bottom: 2.5rem; }
+.card:hover {
+  transform: translate(3px, 3px);
+  box-shadow: 3px 3px 0 var(--ink);
+}
 
-p { margin: 0 0 1rem; }
-
-a { color: var(--accent); text-decoration: none; }
-a:hover { text-decoration: underline; }
-
-.muted { color: var(--muted); }
+.card.orange { background: var(--orange); }
+.card.purple { background: var(--purple); color: #fff4e6; }
+.card p { margin: 0; }
+.card a { color: inherit; font-weight: 700; }
 
 .pubs { list-style: none; padding: 0; margin: 0; }
-.pubs li { margin-bottom: 1.25rem; }
-.pub-title { font-weight: 600; }
+.pubs li { margin-bottom: 1rem; }
+.pubs li:last-child { margin-bottom: 0; }
+.pub-title { font-weight: 700; }
 
 footer {
-  border-top: 1px solid var(--rule);
-  padding-top: 1.5rem;
-  font-size: .9rem;
+  margin-top: 3.5rem;
+  padding-top: 1.2rem;
+  border-top: var(--edge) solid var(--ink);
+  font-size: .85rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: .06em;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * { transition: none !important; }
 }
