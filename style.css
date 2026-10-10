@@ -131,7 +131,7 @@ h2 {
 .card.orange { background: var(--orange); }
 .card.purple { background: var(--purple); color: #fff4e6; }
 .card p { margin: 0; }
-.card a { color: inherit; font-weight: 700; }
+.card a { color: inherit; font-weight: 700; text-decoration: underline; text-underline-offset: 2px; }
 
 .pubs { list-style: none; padding: 0; margin: 0; }
 .pubs li { margin-bottom: 1.1rem; line-height: 1.5; }
@@ -162,3 +162,37 @@ footer {
 @media (prefers-reduced-motion: reduce) {
   * { transition: none !important; }
 }
+
+/* ---- CV-style entries: education, posters, voluntary work ---- */
+
+.entries { list-style: none; padding: 0; margin: 1.1rem 0 0; }
+.entries > li { margin-bottom: 1.3rem; }
+.entries > li:last-child { margin-bottom: 0; }
+
+.entry-head {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: .3rem 1rem;
+}
+
+.entry-title { font-weight: 800; }
+
+.entry-date {
+  font-size: .82rem;
+  font-weight: 700;
+  letter-spacing: .04em;
+  font-variant-numeric: tabular-nums;
+  opacity: .85;
+  white-space: nowrap;
+}
+
+.entry-org { font-size: .95rem; opacity: .9; margin-top: .1rem; }
+
+.entry-points { margin: .45rem 0 0; padding-left: 1.1rem; }
+.entry-points li { margin-bottom: .25rem; }
+.entry-points li:last-child { margin-bottom: 0; }
+
+/* the About card holds a single education entry; no extra top gap needed */
+section:first-of-type .entries { margin-top: 1rem; }
