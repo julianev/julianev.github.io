@@ -190,7 +190,6 @@ footer {
 
 .entry-org { font-size: .95rem; opacity: .9; margin-top: .1rem; }
 
-.entry-desc { margin: .35rem 0 0; font-size: .95rem; line-height: 1.5; }
 
 /* the About card holds a single education entry; no extra top gap needed */
 section:first-of-type .entries { margin-top: 1rem; }
