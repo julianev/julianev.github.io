@@ -34,8 +34,15 @@
   <section>
     <h2>Research</h2>
     <div class="card orange">
-      <p>My interests are in evaluating tutoring at the level of a whole interaction, in what real human tutoring data reveals about learning, in student simulators, and in reinforcement learning for post-training tutors against outcome-grounded signals.</p>
-      <p>AI tutors are already reaching millions of learners, yet we still lack scalable measures of tutoring quality validated against real learning outcomes. My thesis works towards such measures, built from real human tutoring data rather than simulated dialogue, and towards using them to benchmark and train tutors, so that a tutor is judged by the progress a learner makes over an interaction.</p>
+      <ul class="chips">
+        <li class="chip">interaction-level evaluation</li>
+        <li class="chip">real tutoring data</li>
+        <li class="chip">learning outcomes</li>
+        <li class="chip">student simulators</li>
+        <li class="chip">RL post-training</li>
+      </ul>
+      <p>LLMs are already used as tutors by millions of learners, yet there is little evidence that they actually help students learn. Current benchmarks mostly score individual tutor responses by proxies for good teaching rather than whether a whole interaction produces learning, and they largely rely on unrealistic synthetic dialogues.</p>
+      <p>My goal is to develop evaluation and training methods for LLM tutors, grounded in real human tutoring data and in measures of quality that take the whole interaction into account, validated against real learning outcomes. The central question is which features of an interaction predict genuine student progress, and how well scalable signals such as LLM judges or learned reward models track directly measured outcomes. The broader goal is to train LLMs that genuinely help students learn, not chatbots prompted to behave pedagogically.</p>
     </div>
   </section>
 

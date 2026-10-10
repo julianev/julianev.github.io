@@ -195,3 +195,25 @@ footer {
 
 /* the About card holds a single education entry; no extra top gap needed */
 section:first-of-type .entries { margin-top: 1rem; }
+
+/* ---- research interest chips ---- */
+
+.chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .4rem;
+  list-style: none;
+  padding: 0;
+  margin: 0 0 1.1rem;
+}
+
+/* currentColor keeps them legible on either card colour */
+.chip {
+  font-size: .72rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: .06em;
+  border: 2px solid currentColor;
+  padding: .18rem .5rem;
+  white-space: nowrap;
+}
