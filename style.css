@@ -33,15 +33,15 @@ body {
 main {
   max-width: 46rem;
   margin: 0 auto;
-  padding: 3.5rem 1rem 6rem;
+  padding: 2.5rem 1rem 5rem;
 }
 
 /* ---- header ---- */
 
 h1 {
-  font-size: clamp(2.6rem, 10vw, 4.4rem);
-  line-height: .92;
-  margin: 0 0 1rem;
+  font-size: clamp(1.8rem, 7vw, 3.4rem);
+  line-height: 1.05;
+  margin: 0 0 .7rem;
   text-transform: uppercase;
   font-weight: 800;
   letter-spacing: -.03em;
@@ -58,7 +58,7 @@ h1 .last {
 .tagline {
   font-size: 1.05rem;
   font-weight: 600;
-  margin: 0 0 1.6rem;
+  margin: 0 0 1.2rem;
 }
 
 .tagline a {
@@ -100,7 +100,7 @@ nav svg { width: 16px; height: 16px; flex: none; }
 
 /* ---- sections ---- */
 
-section { margin-top: 3rem; }
+section { margin-top: 2.3rem; }
 
 h2 {
   display: inline-block;
