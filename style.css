@@ -134,9 +134,20 @@ h2 {
 .card a { color: inherit; font-weight: 700; }
 
 .pubs { list-style: none; padding: 0; margin: 0; }
-.pubs li { margin-bottom: 1rem; }
+.pubs li { margin-bottom: 1.1rem; line-height: 1.5; }
 .pubs li:last-child { margin-bottom: 0; }
-.pub-title { font-weight: 700; }
+.pub-title { font-weight: 800; font-size: 1.05rem; }
+
+/* your own name in an author list */
+.me { font-weight: 800; text-decoration: underline; text-underline-offset: 3px; }
+
+.pub-note {
+  margin: 1.1rem 0 0;
+  padding-top: .9rem;
+  border-top: 2px solid currentColor;
+  font-size: .88rem;
+  opacity: .85;
+}
 
 footer {
   margin-top: 3.5rem;
